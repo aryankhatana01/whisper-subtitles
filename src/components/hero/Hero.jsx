@@ -1,6 +1,6 @@
 import React from 'react';
 import './Hero.css';
-import videobg from '../../assets/bg.mp4';
+import videobg from '../../assets/bg2.mp4';
 
 const Hero = () => {
   return (
