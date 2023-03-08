@@ -1,12 +1,10 @@
 import './App.css';
-import videobg from './assets/bg.mp4'
+import Hero from './components/hero/Hero';
 
 function App() {
   return (
     <div className="App">
-      <div className='video-bg'>
-        <video src={videobg} autoPlay muted loop></video>
-      </div>
+      <Hero />
     </div>
   );
 }
