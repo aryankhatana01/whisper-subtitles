@@ -8,11 +8,26 @@
     transform: scale(1.08) perspective(1px);
 }
 
+.icon {
+    width: 18px;
+    height: 18px;
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 8px;
+}
+
 header {
     padding-left: 3rem;
     padding-right: 3rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     /* STICKY NAVBAR START */
     background-color: rgba(255, 255, 255, 0.9);
     position: sticky;
@@ -22,4 +37,17 @@ header {
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     /* STICKY NAVBAR END */
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 6rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Inter';
+    font-weight: 700;
 }
