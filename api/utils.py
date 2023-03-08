@@ -23,7 +23,7 @@ def set_workdir(folder):
     return folder
 
 
-def transcribe(video_in, output_dir, model="small"):
+def transcribe(video_in, output_dir, model="small", model_dir="../model/"):
     video_in = Path(video_in).absolute()
     output_dir = set_workdir(output_dir)
     audio_file = video_in.stem + ".aac"
@@ -36,7 +36,7 @@ def transcribe(video_in, output_dir, model="small"):
     execute(stream, desc=f"Converting {video_in.name} to {audio_file}...")
 
     gpu = torch.cuda.is_available()
-    model = whisper.load_model(model, download_root="model/")
+    model = whisper.load_model(model, download_root=model_dir)
     result = model.transcribe(
         audio_file, 
         task="transcribe", 

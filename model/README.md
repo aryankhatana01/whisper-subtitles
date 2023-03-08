@@ -1,0 +1,1 @@
+Run ```python3 api/model_download.py``` to download the model.
