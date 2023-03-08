@@ -1,11 +1,13 @@
 import React, { useContext, useState } from "react";
 import './UploadBtn.css';
 import FileContext from '../contexts/FileContext'
+import Loader from '../loader/Loader'
 
 
 const UpscaleBtn = () => {
     const selectedFile = useContext(FileContext);
     const [pred, setPred] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     const handleUpload = async () => {
         const formData = new FormData();
@@ -21,6 +23,7 @@ const UpscaleBtn = () => {
         // const data = await resp.json();
     }
     const handlePredict = async () => {
+        setLoading(true);
         await handleUpload();
         const requestOptions = {
             method: 'GET',
@@ -30,6 +33,7 @@ const UpscaleBtn = () => {
         setPred(data["STATUS"]);
         console.log(data);
         console.log(pred);
+        setLoading(false);
     }
 
     const handleDownload = async () => {
@@ -51,6 +55,7 @@ const UpscaleBtn = () => {
     return (
         <div className="predict-button">
             <button className="predict-button-button" onClick={handlePredict}>Transcribe!</button>
+            {loading ? <Loader /> : null}
             {pred === "SUCCESS" && (
                 <button className="download-button" onClick={handleDownload}>
                     Download Subtitles!
