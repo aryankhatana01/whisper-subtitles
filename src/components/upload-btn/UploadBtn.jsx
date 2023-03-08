@@ -37,14 +37,14 @@ const UpscaleBtn = () => {
           method: "GET",
         };
         const resp = await fetch(
-          "http://localhost:8000/image/",
+          `http://localhost:8000/getSubtitles/?filename=${selectedFile.name}`,
           requestOptions
         );
         const blob = await resp.blob();
         const url = URL.createObjectURL(blob);
         const downloadLink = document.createElement("a");
         downloadLink.href = url;
-        downloadLink.download = "transcribed.mp4";
+        downloadLink.download = "subtitles.srt";
         document.body.appendChild(downloadLink);
         downloadLink.click();
     };
@@ -53,7 +53,7 @@ const UpscaleBtn = () => {
             <button className="predict-button-button" onClick={handlePredict}>Transcribe!</button>
             {pred === "SUCCESS" && (
                 <button className="download-button" onClick={handleDownload}>
-                    Download Image
+                    Download Subtitles!
                 </button>
             )}
         </div>

@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import pathlib
 
 import ffmpeg
 import torch
@@ -25,6 +26,7 @@ def set_workdir(folder):
 
 def transcribe(video_in, output_dir, model="small", model_dir="../model/"):
     video_in = Path(video_in).absolute()
+    current_dir = pathlib.Path().absolute()
     output_dir = set_workdir(output_dir)
     audio_file = video_in.stem + ".aac"
     stream = (
@@ -55,6 +57,7 @@ def transcribe(video_in, output_dir, model="small", model_dir="../model/"):
         if file.endswith('.ass') or file.endswith('.aac'):
             os.remove(file)
     print(f"Output -> {output_dir}")
+    current_dir = set_workdir(current_dir)
 
 
 if __name__=="__main__":

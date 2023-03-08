@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import './UploadSection.css'
+import UpscaleBtn from '../upload-btn/UploadBtn';
 
 const UploadSection = (props) => {
     const fileInputRef = useRef(null);
@@ -19,6 +20,7 @@ const UploadSection = (props) => {
                 Click or Drag & Drop your video here
                 <p>(Make sure the file is an MP4)</p>
             </div>
+            <UpscaleBtn />
         </div>
       )
 }
