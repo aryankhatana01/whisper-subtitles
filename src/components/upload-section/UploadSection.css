@@ -1,0 +1,36 @@
+.container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.drag-n-drop {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    padding-left: 13rem;
+    padding-right: 13rem;
+    border-style: dashed;
+    border-width: 4px;
+    border-color: #ffffff;
+    border-radius: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    background-color: rgba(39, 39, 42, 0.3);
+    cursor: pointer;
+}
+
+.drag-n-drop:hover {
+    background-color: rgba(39, 39, 42, 0.5);
+}
+
+p {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding-top: 1rem;
+}
+/* .button-upscale {
+    background-color: #27272a;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    padding: 0.7rem;
+} */

@@ -1,0 +1,38 @@
+.predict-button {
+    text-align: center;
+}
+
+.predict-button-button {
+    background-color: #5162FF;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-radius: 12px;
+    color: white;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: 0.5s;
+    border: none;
+}
+
+.predict-button-button:hover {
+    background-color: #3B4BCC;
+    cursor: pointer;
+}
+
+.download-button {
+    background-color: #51ffeb;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-radius: 12px;
+    color: rgb(0, 0, 0);
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: 0.5s;
+    border: none;
+}
