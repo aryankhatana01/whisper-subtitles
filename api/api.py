@@ -4,6 +4,7 @@ from pathlib import Path
 import utils
 from fastapi.middleware.cors import CORSMiddleware
 from cors_origins import Origins
+import os
 from fastapi.responses import FileResponse
 
 app = FastAPI()
@@ -37,6 +38,7 @@ async def predict(filename: str):
     in_path = Path(__file__).parents[1] / "saved_videos" / filename
     out_path = "result/"
     utils.transcribe(in_path, out_path)
+    os.remove(in_path)
     return {
         "STATUS": "SUCCESS",
     }
