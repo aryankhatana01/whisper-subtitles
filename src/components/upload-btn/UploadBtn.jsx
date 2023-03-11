@@ -19,7 +19,7 @@ const UpscaleBtn = () => {
             method: 'POST',
             body: formData,
         };
-        await fetch('http://localhost:8000/uploadfile', requestOptions);
+        await fetch('http://34.133.5.60/uploadfile', requestOptions);
         // const data = await resp.json();
     }
     const handlePredict = async () => {
@@ -28,7 +28,7 @@ const UpscaleBtn = () => {
         const requestOptions = {
             method: 'GET',
         };
-        const resp = await fetch(`http://localhost:8000/predict/?filename=${selectedFile.name}`, requestOptions);
+        const resp = await fetch(`http://34.133.5.60/predict/?filename=${selectedFile.name}`, requestOptions);
         const data = await resp.json();
         setPred(data["STATUS"]);
         console.log(data);
@@ -41,7 +41,7 @@ const UpscaleBtn = () => {
           method: "GET",
         };
         const resp = await fetch(
-          `http://localhost:8000/getSubtitles/?filename=${selectedFile.name}`,
+          `http://34.133.5.60/getSubtitles/?filename=${selectedFile.name}`,
           requestOptions
         );
         const blob = await resp.blob();
