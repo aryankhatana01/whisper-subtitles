@@ -19,7 +19,7 @@ const UpscaleBtn = () => {
             method: 'POST',
             body: formData,
         };
-        await fetch('https://fastapi-380506.as.r.appspot.com/uploadfile', requestOptions);
+        await fetch('http://localhost:8000/uploadfile', requestOptions);
         // const data = await resp.json();
     }
     const handlePredict = async () => {
@@ -28,7 +28,7 @@ const UpscaleBtn = () => {
         const requestOptions = {
             method: 'GET',
         };
-        const resp = await fetch(`https://fastapi-380506.as.r.appspot.com/predict/?filename=${selectedFile.name}`, requestOptions);
+        const resp = await fetch(`http://localhost:8000/predict/?filename=${selectedFile.name}`, requestOptions);
         const data = await resp.json();
         setPred(data["STATUS"]);
         console.log(data);
@@ -41,7 +41,7 @@ const UpscaleBtn = () => {
           method: "GET",
         };
         const resp = await fetch(
-          `https://fastapi-380506.as.r.appspot.com/getSubtitles/?filename=${selectedFile.name}`,
+          `http://localhost:8000/getSubtitles/?filename=${selectedFile.name}`,
           requestOptions
         );
         const blob = await resp.blob();
